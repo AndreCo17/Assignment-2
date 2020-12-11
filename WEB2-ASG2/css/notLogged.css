@@ -1,0 +1,39 @@
+html {
+    height: 100%;
+}
+label {
+    padding:10px;
+    margin: 2em;
+}
+body{
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 200;
+    height: 100%;
+    background-image: url("../images/darya-tryfanava-UCNaGWn4EfU-unsplash.jpg"); /**image from https://unsplash.com/photos/9LyLBVzr9ys **/
+    background-size: 100% 100%;
+    background-repeat: repeat;
+    text-align: center;
+
+}
+
+form {   
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 3em;
+    padding-left: 8em;
+    padding-right: 8em;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: lightgray;
+    opacity: .925;
+    margin-top: 10%;
+}
+
+input {
+    padding: 10px;
+}
+
+div {
+    margin-top: 10px;
+}

@@ -1,0 +1,36 @@
+:root {
+    --box-header-color: #b4ddf0;
+    --box-main-color: #429fca;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#outerbox1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: var(--box-header-color);
+    padding: 10px;
+}
+
+#outerbox2 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    background-color: var(--box-header-color);
+    padding: 10px;
+}
+
+form {
+    background-color: var(--box-main-color);
+    padding: 10px;
+}
+
+.txtInput {
+    float: right;
+}
+
+.dropdown {
+    float: right;
+}

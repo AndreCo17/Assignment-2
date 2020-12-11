@@ -1,0 +1,90 @@
+:root {
+  --box-header-color: #b4ddf0;
+  --box-main-color: #429fca;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+#image {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  background-color: var(--box-header-color);
+  padding: 10px;
+}
+
+#imgInUse {
+  size: 100px;
+  padding: 10px;
+}
+
+#descriptionSec {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  background-color: var(--box-header-color);
+  padding: 10px;
+}
+
+#favourites {
+  float: right;
+  padding: 10px;
+}
+
+#colours {
+overflow: auto;
+padding: 10px;
+}
+
+#hexBlocks {
+padding:25px;
+margin: 25px;
+width: 25px;
+height: 25px;
+}
+
+#hex {
+padding: 10px;
+margin: 10px;
+line-height: 200%;
+}
+#hexNames {
+padding: 10px;
+margin: 17px;
+display: block;
+}
+
+/*CITATION: How To- Tabs: from w3school.com retrieved from: https://www.w3schools.com/howto/howto_js_tabs.asp*/
+/* Style for tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
