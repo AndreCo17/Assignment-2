@@ -45,7 +45,7 @@ try {
     <title>Browse Paintings</title>
     <meta charset=utf-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='css/browse.css' rel='stylesheet' type='text/css'>
+    <link href='../css/browse.css' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -69,7 +69,7 @@ try {
                             echo $name;
                             echo "</option>";
                         }
-                        mysqli_close($connection);
+                        mysqli_close($conn);
                         ?>
                     </select><br><br><br>
                     <label>Gallery</label>
@@ -82,8 +82,7 @@ try {
                             echo $row['GalleryName'];
                             echo "</option>";
                         }
-                        mysqli_close($connection);
-                        ?>
+                        mysqli_close($conn);
                         ?>
                     </select>
                 </div>
@@ -110,33 +109,7 @@ try {
             <table>
                 <!--code for retrieved data from form-->
                 <?php
-                if (isset($_GET['field'])) {
-                    $rowInfo = $_GET['field'];
-                    if (isset($_GET['title'])) {
-                        $title = $_GET['title'];
-                    }
-
-                    if (isset($_GET['artist'])) {
-                        $artist = $_GET['ArtistID'];
-                    }
-
-                    if (isset($_GET['gallery'])) {
-                        $gallery = $_GET['GalleryID'];
-                    }
-
-                    if (isset($_GET['beforeTxt']) && isset($_GET['before'])) {
-                        $year = $_GET['beforeTxt'];
-                    }
-
-                    if (isset($_GET['afterTxt']) && isset($_GET['after'])) {
-                        $year = $_GET['afterTxt'];
-                    }
-
-                    if (isset($_GET['betweenStart']) && isset($_GET['betweenEnd']) && isset($_GET['between'])) {
-                        $start = $_GET['betweenStart'];
-                        $end = $_GET['betweenEnd'];
-                    }
-                }
+                
 
                 //here will be the generated table rows
                 function checkName($row)
@@ -149,22 +122,21 @@ try {
                         return $row['LastName'] . ", " . $row['FirstName'];
                     }
                 }
-                generateTable($paintings); ?>
-
-                <?php function generateTable($list)
-                { ?>
-                    <tr>
-                        <th></th>
-                        <th>Artist</th>
-                        <th>Title</th>
-                        <th>Year</th>
-                    </tr>
-                    <?php
+                ?>
+                <!--Below is where the tables are generated-->
+                <?php function generateTable($list) { ?>
+                <tr>
+                    <th></th>
+                    <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['artist']">Artist</a></th>
+                    <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['title']=%$_GET['title']%">Title</a></th>
+                    <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['year']=1500">Year</a></th>
+                </tr>
+                <?php 
                     foreach ($list as $row) { ?>
                         <tr class="tempTr">
                             <td class="img">
                                 <a href="single-painting.php?id=<?= $row['PaintingID'] ?>">
-                                    <img src='images/paintings/square-medium/<?= $row['ImageFileName'] ?>.jpg' />
+                                    <img src='../images/paintings/square-medium/<?= $row['ImageFileName'] ?>.jpg' />
                                 </a>
                             </td>
                             <td class="artist"><?= checkName($row) ?></td>
@@ -184,8 +156,8 @@ try {
                                 </form>
                             </td>
                             <td><button><a href="single-painting.php?id=<?= $row['PaintingID'] ?>">View</a></button></td>
-                    <?php
-                    }
+                    <?php 
+                    } mysqli_close($conn);
                 } ?>
             </table>
         </section>
