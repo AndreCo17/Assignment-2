@@ -1,7 +1,7 @@
 <?php
 require_once 'api/config.inc.php';
 require_once 'api/ASG2-classes.php';
-include 'nav-header.php';
+
 
 session_start();
 if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
@@ -13,6 +13,7 @@ try {
     //$sql = "SELECT * from customers INNER JOIN customerlogon ON customerlogon.CustomerID = customers.CustomerID";
     
     if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+        include 'nav-header.php';
         $sql = "SELECT * from customers WHERE CustomerID= '" . $userID . "'";
         $result = $pdo->query($sql);
         $row1 = $result->fetch();
@@ -21,6 +22,7 @@ try {
         $city = $row1['City'];
         $country = $row1['Country'];
      } else {
+         include 'logout-header.php';
         $firstName = '';
         $lastName = '';
         $city = '';
@@ -102,7 +104,7 @@ function findRecommended()
         </div>
         <div class="box favoritePainting">
             <h2>Favorite Paintings</h2>
-            <?php include 'favorites.php'; ?>
+            <?php  ?>
         </div>
         <div class="box search">
             <section>
@@ -114,7 +116,7 @@ function findRecommended()
         <div class="box paintingsLike">
             <h2>Paintings You May Like</h2>
             <ul id="paintingList">
-                <?php findRecommended(); ?>
+                <?php  ?>
             </ul>
         </div>
     </main>
