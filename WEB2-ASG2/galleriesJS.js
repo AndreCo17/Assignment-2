@@ -9,7 +9,7 @@ function initMap() {
 
 //Fetches galleries api and stores it within local storage. If api is already stored set api to local storage
 document.addEventListener("DOMContentLoaded", function () {
-    const API = "api/api-galleries.php";
+    const API = "api-galleries.php";
 
     fetch(API)
         .then(resp => resp.json())
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* fetches the information from paintings.php */
     function generatePaintings(d) {
-        fetch(`api/api-paintings.php?galleryID=${d.GalleryID}`)
+        fetch(`api-paintings.php?galleryID=${d.GalleryID}`)
             .then(response => response.json())
             .then(paintingsData => {
                 populatePaintingsTable(paintingsData);

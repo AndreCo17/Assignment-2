@@ -1,6 +1,6 @@
 <?php
-require_once 'api/config.inc.php';
-require_once 'api/ASG2-classes.php';
+require_once 'config.inc.php';
+require_once 'ASG2-classes.php';
 include 'nav-header.php';
 //include 'favorites.php';
 
@@ -27,9 +27,9 @@ try {
 }
 
 session_start();
-if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
     $userID = $_SESSION['id'];
- }
+}
 ?>
 <!DOCTYPE html>
 <html lang=en>

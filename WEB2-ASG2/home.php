@@ -1,18 +1,18 @@
 <?php
-require_once 'api/config.inc.php';
-require_once 'api/ASG2-classes.php';
+require_once 'config.inc.php';
+require_once 'ASG2-classes.php';
 include 'nav-header.php';
 
 session_start();
-if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
     $userID = $_SESSION['id'];
- }
+}
 try {
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //$sql = "SELECT * from customers INNER JOIN customerlogon ON customerlogon.CustomerID = customers.CustomerID";
-    
-    if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+
+    if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
         $sql = "SELECT * from customers WHERE CustomerID= '" . $userID . "'";
         $result = $pdo->query($sql);
         $row1 = $result->fetch();
@@ -20,15 +20,12 @@ try {
         $lastName = $row1['LastName'];
         $city = $row1['City'];
         $country = $row1['Country'];
-     } else {
+    } else {
         $firstName = '';
         $lastName = '';
         $city = '';
         $country = '';
-     }
-
-
-
+    }
 } catch (Exception $e) {
     die($e->getMessage());
 }
