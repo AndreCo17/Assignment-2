@@ -4,20 +4,31 @@ require_once 'api/ASG2-classes.php';
 include 'nav-header.php';
 
 session_start();
-$userId = $_SESSION['id'];
-//$favorites = $_SESSION['PaintingID'];
+if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+    $userID = $_SESSION['id'];
+ }
 try {
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //$sql = "SELECT * from customers INNER JOIN customerlogon ON customerlogon.CustomerID = customers.CustomerID";
-    $sql = "SELECT * from customers WHERE CustomerID= '" . $userId . "'";
-    $result = $pdo->query($sql);
-    $row1 = $result->fetch();
+    
+    if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+        $sql = "SELECT * from customers WHERE CustomerID= '" . $userID . "'";
+        $result = $pdo->query($sql);
+        $row1 = $result->fetch();
+        $firstName = $row1['FirstName'];
+        $lastName = $row1['LastName'];
+        $city = $row1['City'];
+        $country = $row1['Country'];
+     } else {
+        $firstName = '';
+        $lastName = '';
+        $city = '';
+        $country = '';
+     }
 
-    $firstName = $row1['FirstName'];
-    $lastName = $row1['LastName'];
-    $city = $row1['City'];
-    $country = $row1['Country'];
+
+
 } catch (Exception $e) {
     die($e->getMessage());
 }
