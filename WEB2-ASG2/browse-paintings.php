@@ -45,7 +45,7 @@ try {
     <title>Browse Paintings</title>
     <meta charset=utf-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='../css/browse.css' rel='stylesheet' type='text/css'>
+    <link href='css/browse.css' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -109,7 +109,7 @@ try {
             <table>
                 <!--code for retrieved data from form-->
                 <?php
-                
+
 
                 //here will be the generated table rows
                 function checkName($row)
@@ -124,14 +124,15 @@ try {
                 }
                 ?>
                 <!--Below is where the tables are generated-->
-                <?php function generateTable($list) { ?>
-                <tr>
-                    <th></th>
-                    <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['artist']">Artist</a></th>
-                    <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['title']=%$_GET['title']%">Title</a></th>
-                    <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['year']=1500">Year</a></th>
-                </tr>
-                <?php 
+                <?php function generateTable($list)
+                { ?>
+                    <tr>
+                        <th></th>
+                        <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['artist']">Artist</a></th>
+                        <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['title']=%$_GET['title']%">Title</a></th>
+                        <th><a href="browse-paintings.php?sort=$_GET['year']&$_GET['title']=Port&$_GET['artist']=&$_GET['gallery']=&$_GET['year']=1500">Year</a></th>
+                    </tr>
+                    <?php
                     foreach ($list as $row) { ?>
                         <tr class="tempTr">
                             <td class="img">
@@ -156,8 +157,9 @@ try {
                                 </form>
                             </td>
                             <td><button><a href="single-painting.php?id=<?= $row['PaintingID'] ?>">View</a></button></td>
-                    <?php 
-                    } mysqli_close($conn);
+                    <?php
+                    }
+                    mysqli_close($conn);
                 } ?>
             </table>
         </section>
