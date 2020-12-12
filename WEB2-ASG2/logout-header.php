@@ -1,6 +1,6 @@
 <?php
-require_once 'api/config.inc.php';
-require_once 'api/ASG2-classes.php';
+require_once 'config.inc.php';
+require_once 'ASG2-classes.php';
 ?>
 <!DOCTYPE html>
 <html>
