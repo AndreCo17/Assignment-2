@@ -111,6 +111,7 @@ try {
                 <?php
                 /*CITATION: Stackoverflow - using select form to filter table queried from mysql using PHP. Retrieved from: https://stackoverflow.com/questions/51048002/using-select-form-to-filter-table-queried-from-mysql-using-php*/
                 $sql = "SELECT * FROM " . $paintings . " WHERE Paintings.ArtistID='" . $_GET['artist'] . "', Paintings.GalleryID='" . $_GET['gallery'] . "'";
+                runSpecificQuery($sql);
                 generateTable($sql);
                 //here will be the generated table rows
                 function checkName($row)

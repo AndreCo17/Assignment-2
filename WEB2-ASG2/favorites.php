@@ -42,11 +42,11 @@ if ($eventURL == "favJA"){
       }
 //https://stackoverflow.com/questions/22621357/how-to-store-favorites-using-session */
 require_once 'config.inc.php';
-session_start();
+//session_start();
+
 if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
    $userID = $_SESSION['id'];
 }
-
 
 
 try {
