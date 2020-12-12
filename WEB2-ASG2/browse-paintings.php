@@ -111,10 +111,10 @@ try {
                 <?php
                 /*CITATION: Stackoverflow - using select form to filter table queried from mysql using PHP. Retrieved from: https://stackoverflow.com/questions/51048002/using-select-form-to-filter-table-queried-from-mysql-using-php*/
 
-                $sql = "WHERE Paintings.ArtistID='" . $_GET['artist'] . "', Paintings.GalleryID='" . $_GET['gallery'] . "'";
-                $table = $paintGateway->runSpecificQuery($sql);
+                //$sql = "WHERE Paintings.ArtistID='" . $_GET['artist'] . "', Paintings.GalleryID='" . $_GET['gallery'] . "'";
+                //$table = $paintGateway->runSpecificQuery($sql);
 
-                generateTable($table);
+                generateTable($paintings);
 
                 //here will be the generated table rows
                 function checkName($row)
@@ -142,7 +142,7 @@ try {
                         <tr class="tempTr">
                             <td class="img">
                                 <a href="single-painting.php?id=<?= $row['PaintingID'] ?>">
-                                    <img src='../images/paintings/square-medium/<?= $row['ImageFileName'] ?>.jpg' />
+                                    <img src='images/paintings/square-medium/<?= $row['ImageFileName'] ?>.jpg' />
                                 </a>
                             </td>
                             <td class="artist"><?= checkName($row) ?></td>

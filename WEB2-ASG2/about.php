@@ -47,18 +47,19 @@ include 'nav-header.php';
                     <li>Andre Co => <a href="https://github.com/AndreCo17?tab=repositories">Profile Link</a></li>
                     <li>Josh K => <a href="https://github.com/jprov79?tab=repositories">Profile Link</a></li>
                     <li>Jean Provost => <a href="https://github.com/jprov79?tab=repositories">Profile Link</a></li>
-                    <li>Yuan Tao Zhou => <a href="https://github.com/yuantzhou?tab=repositories">Profile Link</a></li>
                 </ul>
             </li>
             <br>
-            <li>Assignment 2 Github: <a href="https://github.com/yuantzhou/Comp3512-Assignment-2">Repository Link</a></li>
+            <li>Assignment 2 Github: <a href="https://github.com/AndreCo17/Assignment-2">Repository Link</a></li>
             <br>
             <li>External Sources
                 <ul>
                     <li>How to make a hamburger menu => <a href="https://www.youtube.com/watch?v=8r3hGIvyP3k">Youtube Link</a></li>
-                    <li>Password verify index.php line 30<a href="https://www.php.net/manual/en/function.password-verify.php">Link</a></li>
-                    <li>use sessions array for favorites<a href="https://www.plus2net.com/php_tutorial/array-session.php"></a>Link</li>
-                    <li>logout from a session for logout.php<a href="https://stackoverflow.com/questions/3512507/proper-way-to-logout-from-a-session-in-php/3512570">Link</a></li>
+                    <li>Password verify index.php line 30 => <a href="https://www.php.net/manual/en/function.password-verify.php">Link</a></li>
+                    <li>Use sessions array for favorites => <a href="https://www.plus2net.com/php_tutorial/array-session.php">Link</a></li>
+                    <li>Logout from a session for logout.php => <a href="https://stackoverflow.com/questions/3512507/proper-way-to-logout-from-a-session-in-php/3512570">Link</a></li>
+                    <li>How to using select form to filter table queried from mysql using PHP => <a href="https://stackoverflow.com/questions/51048002/using-select-form-to-filter-table-queried-from-mysql-using-php">Stackoverflow Link</a>
+                    <li>How to- Tabs => <a href="https://www.w3schools.com/howto/howto_js_tabs.asp">w3schools Link</a>
                 </ul>
             </li>
         </ul>

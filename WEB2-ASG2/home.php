@@ -11,8 +11,8 @@ try {
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //$sql = "SELECT * from customers INNER JOIN customerlogon ON customerlogon.CustomerID = customers.CustomerID";
-    
-    if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+
+    if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
         include 'nav-header.php';
         $sql = "SELECT * from customers WHERE CustomerID= '" . $userID . "'";
         $result = $pdo->query($sql);
@@ -21,8 +21,8 @@ try {
         $lastName = $row1['LastName'];
         $city = $row1['City'];
         $country = $row1['Country'];
-     } else {
-         include 'logout-header.php';
+    } else {
+        include 'logout-header.php';
         $firstName = '';
         $lastName = '';
         $city = '';
@@ -63,7 +63,7 @@ function findRecommended()
         $result = $pdo->query($sql);
         $paintings = $result->fetchAll(PDO::FETCH_ASSOC);
         foreach ($paintings as $row) {
-            $fileName = "images/paintings/square/" . $row['ImageFileName'];
+            $fileName = "../images/paintings/square/" . $row['ImageFileName'];
 
             echo '<li>';
             echo '<a href="single-painting.php?PaintingID="' . $row['PaintingID'] . '"">';
