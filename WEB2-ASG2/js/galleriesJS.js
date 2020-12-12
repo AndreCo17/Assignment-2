@@ -9,9 +9,9 @@ function initMap() {
 
 //Fetches galleries api and stores it within local storage. If api is already stored set api to local storage
 document.addEventListener("DOMContentLoaded", function () {
-    const galleryAPI = "api/api-galleries.php";
+    const API = "api/api-galleries.php";
 
-    fetch(galleryAPI)
+    fetch(API)
         .then(resp => resp.json())
         .then(data => {
             populateGalleries(data);
