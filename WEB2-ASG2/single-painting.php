@@ -51,11 +51,25 @@ if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
         <section id='descriptionSec'>
             <h2><?= $painting['Title'] ?></h2>
             <!--button for favs is hidden when user is not logged in-->
+            <form method="post" action="">
+                <button type='submit'  name='favorites'>Add to Favorites</button>
+            </form>
             <?php
             if (isset($_SESSION['loggin'/*chage if you used a different name*/]) && $_SESSION['loggin'] == true) {
-                echo '<form method="post">';
-                echo "<input type='submit' id='favourites' onclick='' value='Add to Favorites'>";
-                echo '</form>';
+                
+                
+                
+                //echo '<form method="post" action="">';
+               // echo "<button type='submit'  name='favoritses'>Add to Favorites</button>";
+               //echo '</form>';
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $_SESSION['favorited'] = true;
+                    $_SESSION['PaintingID'] = $id;
+                    $_SESSION['Title'] = $painting['Title'];
+                    $_SESSION['file'] = $painting['ImageFileName'];
+                    header("location:favorites.php");
+                }
+                //header("location: favorites.php");
             } elseif (isset($_SESSION['loggin'/*chage if you used a different name*/]) && $_SESSION['loggin'] == true && $alreadyFav == 'true') {
                 echo "<button id='favourites' onclick=''>Already a Favourite</button>";
             } else {

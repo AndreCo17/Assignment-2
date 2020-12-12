@@ -23,9 +23,9 @@ require_once 'ASG2-classes.php';
                 <li><a href="about.php">About</a></li>
                 <li><a href="galleries.php">Galleries</a></li>
                 <li><a href="browse-paintings.php">Browse</a></li>
-                <li><a class="logged-in" href="favorites.php">Favorites</a></li> <!-- only available when logged in -->
-                <li><a class="logged-in" href="logout.php">Logout</a></li>
+                 
                 
+                <li><a class="logged-out" href="logout.php">Login</a></li>
             </ul>
 
             <!-- "Hamburger menu" to toggle the navigation links -->
@@ -34,6 +34,6 @@ require_once 'ASG2-classes.php';
             </div>
         </div>
     </header>
-    <script src="nav.js"> </script>
+    <script src="js/nav.js"> </script>
 
 </html>

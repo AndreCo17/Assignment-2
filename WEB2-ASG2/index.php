@@ -3,7 +3,7 @@ session_start();
 
 require_once 'config.inc.php';
 require_once 'ASG2-classes.php';
-include 'nav-header.php';
+include 'logout-header.php';
 
 
 
@@ -27,7 +27,7 @@ try {
 
             $digest = password_hash($_POST['password'], PASSWORD_BCRYPT, array("cost" => 12, "salt" => $customerSalt));
 
-            if (password_verify($_POST['password'], $digest)) {
+            if (password_verify($_POST['password'], $digest)) { //from https://www.php.net/manual/en/function.password-verify.php
 
                 //session_start();
                 echo 'Login successful';
