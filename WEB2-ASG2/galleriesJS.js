@@ -9,31 +9,25 @@ function initMap() {
 
 //Fetches galleries api and stores it within local storage. If api is already stored set api to local storage
 document.addEventListener("DOMContentLoaded", function () {
-    const API = "api/api-galleries.php";
+    const API = "api-galleries.php";
 
-    fetch(API)
-        .then(resp => resp.json())
-        .then(data => {
-            populateGalleries(data);
-        })
-        .catch(err => console.error(err));
-
-    /* LocalStorage not working as of 10:30am December 10th 2020 */
-
-    /* if (localStorage.getItem("gallery") === null) {
-        fetch(galleryAPI)
+    /* LocalStorage working as of 10:30pm December 11th 2020 */
+    localStorage.clear();
+    if (localStorage.getItem("gallery") === null) {
+        fetch(API)
             .then(resp => resp.json())
             .then(gallery => {
                 localStorage.setItem("gallery", JSON.stringify(gallery));
+                console.log("API was null");
+                document.querySelector("#galleries").style.display = "block";
                 populateGalleries(gallery);
             })
             .catch(err => console.error(err));
-        console.log("was null");
     } else {
         const gallery = JSON.parse(localStorage.getItem("gallery"));
         populateGalleries(gallery);
-        console.log("not null");
-    } */
+        console.log("API did exist");
+    }
 
 
     /* populates galleryList section, populate galleryInfo section,
@@ -83,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* fetches the information from paintings.php */
     function generatePaintings(d) {
-        fetch(`api/api-paintings.php?galleryID=${d.GalleryID}`)
+        fetch(`api-paintings.php?galleryID=${d.GalleryID}`)
             .then(response => response.json())
             .then(paintingsData => {
                 populatePaintingsTable(paintingsData);

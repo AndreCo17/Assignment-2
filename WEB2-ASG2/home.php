@@ -4,9 +4,9 @@ require_once 'api/ASG2-classes.php';
 
 
 session_start();
-if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
     $userID = $_SESSION['id'];
- }
+}
 try {
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -27,10 +27,7 @@ try {
         $lastName = '';
         $city = '';
         $country = '';
-     }
-
-
-
+    }
 } catch (Exception $e) {
     die($e->getMessage());
 }

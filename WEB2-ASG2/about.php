@@ -1,6 +1,6 @@
 <?php
-require_once 'api/config.inc.php';
-require_once 'api/ASG2-classes.php';
+require_once 'config.inc.php';
+require_once 'ASG2-classes.php';
 include 'nav-header.php';
 ?>
 <!DOCTYPE html>
@@ -47,11 +47,10 @@ include 'nav-header.php';
                     <li>Andre Co => <a href="https://github.com/AndreCo17?tab=repositories">Profile Link</a></li>
                     <li>Josh K => <a href="https://github.com/jprov79?tab=repositories">Profile Link</a></li>
                     <li>Jean Provost => <a href="https://github.com/jprov79?tab=repositories">Profile Link</a></li>
-                    <li>Yuan Tao Zhou => <a href="https://github.com/yuantzhou?tab=repositories">Profile Link</a></li>
                 </ul>
             </li>
             <br>
-            <li>Assignment 2 Github: <a href="https://github.com/yuantzhou/Comp3512-Assignment-2">Repository Link</a></li>
+            <li>Assignment 2 Github: <a href="https://github.com/AndreCo17/Assignment-2">Repository Link</a></li>
             <br>
             <li>External Sources
                 <ul>

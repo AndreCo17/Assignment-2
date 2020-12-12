@@ -126,6 +126,14 @@ Galleries.GalleryID = Paintings.GalleryID";
         return $statement->fetchAll();
     }
 
+    public function runSpecificQuery($query)
+    {
+        $sql = $query;
+        $statement =
+            DatabaseHelper::runQuery($this->pdo, $sql, null);
+        return $statement->fetchAll();
+    }
+
     public function top20Paintings($GalleryID)
     {
         $limitSQL = self::$baseSQL . " WHERE Paintings.GalleryID=? ORDER BY YearOfWork LIMIT 20";

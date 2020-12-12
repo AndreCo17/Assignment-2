@@ -1,6 +1,6 @@
 <?php
-require_once 'api/config.inc.php';
-require_once 'api/ASG2-classes.php';
+require_once 'config.inc.php';
+require_once 'ASG2-classes.php';
 include 'nav-header.php';
 ?>
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ include 'nav-header.php';
         <!--for map  -->
         <div id="map"></div>
     </main>
-    <script src="js/galleriesJS.js"></script>
+    <script src="galleriesJS.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzKtg9zVIqY-SrEfnsFS50glx-eBLZN9Q&callback=initMap" async defer></script>
 </body>
 
