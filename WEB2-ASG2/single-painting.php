@@ -2,6 +2,7 @@
 require_once 'api/config.inc.php';
 require_once 'api/ASG2-classes.php';
 include 'nav-header.php';
+//include 'favorites.php';
 
 try {
     $id = $_GET['paintingID'];
@@ -26,7 +27,9 @@ try {
 }
 
 session_start();
-
+if(isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
+    $userID = $_SESSION['id'];
+ }
 ?>
 <!DOCTYPE html>
 <html lang=en>
@@ -49,9 +52,11 @@ session_start();
             <h2><?= $painting['Title'] ?></h2>
             <!--button for favs is hidden when user is not logged in-->
             <?php
-            if (isset($_SESSION['loggedin'/*chage if you used a different name*/]) && $_SESSION['loggedin'] == true) {
-                echo "<button id='favourites' onclick=''>Add to Favourites</button>";
-            } elseif (isset($_SESSION['loggedin'/*chage if you used a different name*/]) && $_SESSION['loggedin'] == true && $alreadyFav == 'true') {
+            if (isset($_SESSION['loggin'/*chage if you used a different name*/]) && $_SESSION['loggin'] == true) {
+                echo '<form method="post">';
+                echo "<input type='submit' id='favourites' onclick='' value='Add to Favorites'>";
+                echo '</form>';
+            } elseif (isset($_SESSION['loggin'/*chage if you used a different name*/]) && $_SESSION['loggin'] == true && $alreadyFav == 'true') {
                 echo "<button id='favourites' onclick=''>Already a Favourite</button>";
             } else {
                 //displays no button

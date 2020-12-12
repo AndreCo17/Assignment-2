@@ -5,13 +5,15 @@ require_once 'api/config.inc.php';
 require_once 'api/ASG2-classes.php';
 include 'nav-header.php';
 
+
+
 try {
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * from customerlogon WHERE UserName= '" . $_POST['email'] . "'";
+        $sql = "SELECT * from CustomerLogon WHERE UserName= '" . $_POST['email'] . "'";
         $result = $pdo->query($sql);
         $row = $result->fetch();
 
