@@ -47,14 +47,17 @@ include 'nav-header.php';
                     <li>Andre Co => <a href="https://github.com/AndreCo17?tab=repositories">Profile Link</a></li>
                     <li>Josh K => <a href="https://github.com/jprov79?tab=repositories">Profile Link</a></li>
                     <li>Jean Provost => <a href="https://github.com/jprov79?tab=repositories">Profile Link</a></li>
+                    <li>Yuan Tao Zhou => <a href="https://github.com/yuantzhou?tab=repositories">Profile Link</a></li>
                 </ul>
             </li>
             <br>
-            <li>Assignment 2 Github: <a href="https://github.com/AndreCo17/Assignment-2">Repository Link</a></li>
+            <li>Assignment 2 Github: <a href="https://github.com/yuantzhou/Comp3512-Assignment-2">Repository Link</a></li>
             <br>
             <li>External Sources
                 <ul>
                     <li>How to make a hamburger menu => <a href="https://www.youtube.com/watch?v=8r3hGIvyP3k">Youtube Link</a></li>
+                    <li>How to using select form to filter table queried from mysql using PHP => <a href="https://stackoverflow.com/questions/51048002/using-select-form-to-filter-table-queried-from-mysql-using-php">Stackoverflow Link</a>
+                    <li>How to- Tabs => <a href="https://www.w3schools.com/howto/howto_js_tabs.asp">w3schools Link</a>
                 </ul>
             </li>
         </ul>

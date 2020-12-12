@@ -103,7 +103,6 @@ if (isset($_SESSION['loggin']) && $_SESSION['loggin'] == true) {
                 ?>
             </div>
             <div id='colours' class='tabcontent'>
-                <!--CITATION: stackoverflow: how to find the dominant color in image. Retrieved from: https://stackoverflow.com/questions/8730661/how-to-find-the-dominant-color-in-image-->
 
                 <?php
                 foreach ($json['dominantColors'] as $hex) {

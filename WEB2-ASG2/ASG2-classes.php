@@ -128,9 +128,8 @@ Galleries.GalleryID = Paintings.GalleryID";
 
     public function runSpecificQuery($query)
     {
-        $sql = $query;
-        $statement =
-            DatabaseHelper::runQuery($this->pdo, $sql, null);
+        $sql = self::$baseSQL . $query;
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
         return $statement->fetchAll();
     }
 
