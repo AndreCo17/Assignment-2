@@ -46,7 +46,7 @@ function outputRecommended($paintings)
 }
 
 
-function findRecommended()
+/**function findRecommended()
 {
     try {
         $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
@@ -75,7 +75,7 @@ function findRecommended()
     } catch (PDOException $e) {
         die($e->getMessage());
     }
-}
+} **/
 ?>
 
 <!DOCTYPE html>

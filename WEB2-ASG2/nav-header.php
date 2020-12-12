@@ -25,6 +25,7 @@ require_once 'ASG2-classes.php';
                 <li><a href="browse-paintings.php">Browse</a></li>
                 <li><a class="logged-in" href="favorites.php">Favorites</a></li> <!-- only available when logged in -->
                 <li><a class="logged-in" href="logout.php">Logout</a></li>
+                <li><a class="logged-out" href="logout.php">Login</a></li>
                 
             </ul>
 

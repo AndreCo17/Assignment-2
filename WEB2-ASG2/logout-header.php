@@ -34,6 +34,6 @@ require_once 'ASG2-classes.php';
             </div>
         </div>
     </header>
-    <script src="js/nav.js"> </script>
+    <script src="nav.js"> </script>
 
 </html>
