@@ -56,6 +56,9 @@ include 'nav-header.php';
             <li>External Sources
                 <ul>
                     <li>How to make a hamburger menu => <a href="https://www.youtube.com/watch?v=8r3hGIvyP3k">Youtube Link</a></li>
+                    <li>Password verify index.php line 30<a href="https://www.php.net/manual/en/function.password-verify.php"></a></li>
+                    <li>use sessions array for favorites<a href="https://www.plus2net.com/php_tutorial/array-session.php"></a></li>
+                    <li>logout from a session for logout.php<a href="https://stackoverflow.com/questions/3512507/proper-way-to-logout-from-a-session-in-php/3512570"></a></li>
                 </ul>
             </li>
         </ul>
